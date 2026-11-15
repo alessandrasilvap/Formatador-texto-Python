@@ -25,6 +25,12 @@ def index():
         elif opcao == "espacos":
             resultado = " ".join(texto.split())
 
+        elif opcao == "capitalizar_espacos":
+            frases = texto.lower().split(".")
+            frases = [f.strip().capitalize() for f in frases]
+            resultado = ". ".join(frases)
+            resultado = " ".join(resultado.split())
+
     return render_template("index.html", resultado=resultado, texto=texto)
 
 if __name__ == "__main__":
